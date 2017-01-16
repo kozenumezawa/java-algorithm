@@ -4,15 +4,28 @@ public class Node {
 	int data;
 	
 	public Node(int d) {
-		data = d;
+		this.data = d;
 	}
 	
 	void appendToTail(int d) {
 		Node end = new Node(d);
 		Node n = this;
-		while (n.next != null) {
+		
+		while(n.next != null) {
 			n = n.next;
 		}
 		n.next = end;
 	}
+
+	void printAllNode() {
+		Node n = this;
+		System.out.println(n.data);
+		
+		while(n.next != null) {
+			n = n.next;
+			System.out.println(n.data);
+		}
+	}
+	
+	
 }

@@ -2,12 +2,12 @@
 public class Node {
 	Node next = null;
 	int data;
-	
-	public Node(int d) {
+
+	public Node (int d) {
 		this.data = d;
 	}
 	
-	void appendToTail(int d) {
+	void appendToTail (int d) {
 		Node end = new Node(d);
 		Node n = this;
 		
@@ -17,15 +17,21 @@ public class Node {
 		n.next = end;
 	}
 
-	void printAllNode() {
-		Node n = this;
-		System.out.println(n.data);
+	Node deleteNode (Node head, int d) {
+		Node n = head;
+		
+		if(n.data == d) {
+			return head.next;
+		}
 		
 		while(n.next != null) {
+			if(n.next.data == d) {
+				n.next = n.next.next;
+				return head;
+			}
 			n = n.next;
-			System.out.println(n.data);
 		}
+		return head;
 	}
-	
 	
 }

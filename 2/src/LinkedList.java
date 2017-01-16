@@ -41,4 +41,20 @@ public class LinkedList {
 		}
 	}
 	
+	int countFromTail(int d) {
+		int count = 0;
+		int numberOfNode = -1;
+		
+		Node n = head;
+		
+		while(n.next != null) {
+			if(n.data == d && numberOfNode == -1) {
+				numberOfNode = count;
+			}
+			count++;
+			n = n.next;
+		}
+		return count - numberOfNode;
+	}
+
 }

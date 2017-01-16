@@ -9,8 +9,8 @@ public class Main {
 		test.appendToTail(0);
 		test.appendToTail(15);
 		
-		test.deleteOverlap(5);
-		test.printAllNode();
+	
+//		test.printAllNode();
+		System.out.println(test.countFromTail(5));
 	}
-
 }
